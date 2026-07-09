@@ -1,0 +1,333 @@
+@import "tailwindcss" source(none);
+@source "../**/*.{js,ts,jsx,tsx,mdx}";
+
+@import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap");
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C8121A #111;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8121A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* ── Glossy Street palette: scarlet red + chrome silver + pure black ── */
+  --background: #060606;
+  --foreground: #F3F3F3;
+  --card: #0C0C0C;
+  --card-foreground: #F3F3F3;
+  --popover: #0C0C0C;
+  --popover-foreground: #F3F3F3;
+  --primary: #C8121A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #111111;
+  --secondary-foreground: #F3F3F3;
+  --muted: #181818;
+  --muted-foreground: #7A7A7A;
+  --accent: #B4B8BC;
+  --accent-foreground: #060606;
+  --destructive: #E03030;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(180, 184, 188, 0.11);
+  --input: transparent;
+  --input-background: #111111;
+  --switch-background: #282828;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #C8121A;
+  --chart-1: #C8121A;
+  --chart-2: #B4B8BC;
+  --chart-3: #E67E22;
+  --chart-4: #27AE60;
+  --chart-5: #8E44AD;
+  --radius: 0.125rem;
+  --sidebar: #060606;
+  --sidebar-foreground: #F3F3F3;
+  --sidebar-primary: #C8121A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #F3F3F3;
+  --sidebar-border: rgba(180, 184, 188, 0.11);
+  --sidebar-ring: #C8121A;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  body {
+    overflow-x: hidden;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  [class*="max-w-[1400px]"] {
+    width: 100%;
+  }
+
+  @media (max-width: 1023px) {
+    [class*="max-w-[1400px]"] {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+
+    section[class*="py-28"],
+    section[class*="py-24"],
+    section[class*="py-20"] {
+      padding-top: 4.5rem !important;
+      padding-bottom: 4.5rem !important;
+    }
+
+    section[class*="pt-36"] {
+      padding-top: 7rem !important;
+    }
+
+    section[class*="pb-28"] {
+      padding-bottom: 4.5rem !important;
+    }
+
+    [class*="gap-16"],
+    [class*="gap-12"] {
+      gap: 2.5rem !important;
+    }
+
+    [class*="text-[clamp("] {
+      font-size: clamp(3rem, 10vw, 6.5rem) !important;
+      line-height: 0.94 !important;
+    }
+
+    h1[class*="text-[clamp("],
+    h2[class*="text-[clamp("] {
+      max-width: 11ch;
+    }
+
+    .text-7xl,
+    .text-6xl {
+      font-size: 3.75rem !important;
+      line-height: 0.95 !important;
+    }
+
+    .text-5xl {
+      font-size: 3rem !important;
+      line-height: 1 !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    [class*="max-w-[1400px]"] {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    section[class*="py-28"],
+    section[class*="py-24"],
+    section[class*="py-20"],
+    section[class*="py-16"] {
+      padding-top: 3.5rem !important;
+      padding-bottom: 3.5rem !important;
+    }
+
+    section[class*="pt-36"] {
+      padding-top: 6.5rem !important;
+    }
+
+    section[class*="pb-28"] {
+      padding-bottom: 3.5rem !important;
+    }
+
+    [class*="gap-16"],
+    [class*="gap-12"],
+    [class*="gap-10"] {
+      gap: 2rem !important;
+    }
+
+    [class*="text-[clamp("] {
+      font-size: clamp(2.625rem, 13vw, 4.75rem) !important;
+      line-height: 0.95 !important;
+    }
+
+    h1[class*="text-[clamp("],
+    h2[class*="text-[clamp("] {
+      max-width: 10ch;
+    }
+
+    .text-7xl,
+    .text-6xl {
+      font-size: 3.125rem !important;
+      line-height: 0.98 !important;
+    }
+
+    .text-5xl {
+      font-size: 2.625rem !important;
+      line-height: 1 !important;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem !important;
+      line-height: 1.05 !important;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem !important;
+      line-height: 1.08 !important;
+    }
+  }
+}
