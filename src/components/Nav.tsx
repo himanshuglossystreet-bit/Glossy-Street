@@ -10,7 +10,7 @@ import logoImg from "@/imports/image.png";
 const links = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Gallery" },
+  // { href: "/gallery", label: "Gallery" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
