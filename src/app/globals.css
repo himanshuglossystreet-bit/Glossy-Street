@@ -249,6 +249,13 @@ html {
       gap: 2.5rem !important;
     }
 
+    [class*="lg:grid-cols-2"],
+    [class*="lg:grid-cols-3"],
+    [class*="lg:grid-cols-4"],
+    [class*="lg:grid-cols-5"] {
+      align-items: stretch;
+    }
+
     [class*="text-[clamp("] {
       font-size: clamp(3rem, 10vw, 6.5rem) !important;
       line-height: 0.94 !important;
@@ -268,6 +275,11 @@ html {
     .text-5xl {
       font-size: 3rem !important;
       line-height: 1 !important;
+    }
+
+    [class*="px-10"] {
+      padding-left: 1.75rem !important;
+      padding-right: 1.75rem !important;
     }
   }
 
@@ -300,7 +312,7 @@ html {
     }
 
     [class*="text-[clamp("] {
-      font-size: clamp(2.625rem, 13vw, 4.75rem) !important;
+      font-size: clamp(2.35rem, 11.5vw, 4.25rem) !important;
       line-height: 0.95 !important;
     }
 
@@ -328,6 +340,54 @@ html {
     .text-3xl {
       font-size: 1.875rem !important;
       line-height: 1.08 !important;
+    }
+
+    [class*="auto-rows-[260px]"] {
+      grid-auto-rows: 170px !important;
+    }
+
+    [class*="w-[340px]"] {
+      width: min(20rem, calc(100vw - 2rem)) !important;
+    }
+
+    [class*="px-10"],
+    [class*="px-8"],
+    [class*="px-7"] {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+
+    [class*="py-7"],
+    [class*="py-6"] {
+      padding-top: 1.25rem !important;
+      padding-bottom: 1.25rem !important;
+    }
+
+    [class*="sticky top-[72px]"] {
+      top: 64px !important;
+    }
+
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (max-width: 420px) {
+    [class*="text-[clamp("] {
+      font-size: clamp(2.1rem, 10.5vw, 3.5rem) !important;
+    }
+
+    .text-4xl,
+    .text-3xl {
+      font-size: 1.7rem !important;
+    }
+
+    [class*="tracking-[0.25em]"],
+    [class*="tracking-[0.22em]"],
+    [class*="tracking-[0.18em]"] {
+      letter-spacing: 0.12em !important;
     }
   }
 }

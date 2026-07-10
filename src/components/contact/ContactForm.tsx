@@ -110,6 +110,11 @@ export default function ContactForm() {
     setSent(false);
     setState(initialFormState);
   };
+  const socialLinks = [
+    { label: "Instagram", href: "https://www.instagram.com/glossystreet_patelnagar/" },
+    { label: "YouTube", href: "#" },
+    { label: "Facebook", href: "#" },
+  ];
 
   return (
     <>
@@ -198,15 +203,17 @@ export default function ContactForm() {
                 Follow Us
               </div>
               <div className="flex flex-wrap gap-3">
-                {["Instagram", "YouTube", "Facebook"].map((s) => (
+                {socialLinks.map((s) => (
                   <motion.a
-                    key={s}
-                    href="#"
+                    key={s.label}
+                    href={s.href}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel={s.href.startsWith("http") ? "noreferrer" : undefined}
                     whileHover={{ y: -3 }}
                     className="px-3 py-2 border border-border text-[10px] tracking-widest uppercase text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                     style={{ fontFamily: "'DM Mono', monospace" }}
                   >
-                    {s}
+                    {s.label}
                   </motion.a>
                 ))}
               </div>

@@ -164,13 +164,13 @@ function Hero() {
                 <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </motion.div>
             </Link>
-            <Link href="/gallery">
+            <Link href="/services">
               <motion.div
                 whileHover={{ scale: 1.04 }}
                 className="group flex items-center gap-2 px-7 py-3.5 border border-border text-foreground/70 hover:text-foreground hover:border-foreground/30 text-xs font-black tracking-widest uppercase cursor-pointer transition-all"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
-                <Play size={10} className="fill-current" /> Our Work
+                <Play size={10} className="fill-current" /> View Services
               </motion.div>
             </Link>
           </div>
@@ -648,45 +648,6 @@ function FeaturedServices() {
 }
 
 // ─── Gallery preview ──────────────────────────────────────────────────────────
-const galleryItems = [
-  { id: "1760520830355-e6be53e41c2f", alt: "Black sports car showroom", span: "row-span-2" },
-  { id: "1764693756618-fc101047a387", alt: "Red ceramic coated sports car", span: "" },
-  { id: "1565689876697-e467b6c54da2", alt: "Wheel detail wash", span: "" },
-  { id: "1761934657948-708146148588", alt: "Microfiber paint finish", span: "" },
-  { id: "1550561438-3c2c3b8ea3a6", alt: "Polished black coupe", span: "" },
-];
-
-function GalleryPreview() {
-  return (
-    <section className="py-28 lg:py-36 bg-secondary border-t border-border">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <SectionLabel>Real Results</SectionLabel>
-            <h2 className="text-[clamp(30px,4.2vw,52px)] font-black uppercase leading-none" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>OUR WORK</h2>
-            <p className="text-muted-foreground text-sm mt-3 max-w-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>Every photo is unedited, unfiltered. Real vehicles, real technicians, real results.</p>
-          </motion.div>
-          <Link href="/gallery" className="group flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-primary hover:gap-3 transition-all shrink-0" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            Full Gallery <ArrowUpRight size={13} />
-          </Link>
-        </div>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 auto-rows-[260px]">
-          {galleryItems.map((img, i) => (
-            <motion.div key={img.id} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-              className={`group relative overflow-hidden bg-muted ${img.span}`}>
-              <motion.img src={`https://images.unsplash.com/photo-${img.id}?w=600&h=600&fit=crop&auto=format`} alt={img.alt}
-                className="w-full h-full object-cover object-center" whileHover={{ scale: 1.06 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} />
-              <div className="absolute inset-0 bg-background/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                <ArrowUpRight size={24} className="text-primary" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // ─── Testimonials ─────────────────────────────────────────────────────────────
 const reviews = [
   { name: "Arjun Mehta", vehicle: "2023 BMW M3 Competition", stars: 5, text: "The paint correction on my M3 completely transformed it. Himanshu found swirl marks under his inspection lights that I had never noticed, and eliminated every single one. The gloss depth is better than when I drove it out of the showroom." },
@@ -885,7 +846,6 @@ export default function Home() {
       <Process />
       <WhyUs />
       <FeaturedServices />
-      <GalleryPreview />
       <Testimonials />
       <BlogPreview />
       <HomeFAQ />
