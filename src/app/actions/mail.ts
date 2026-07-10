@@ -90,10 +90,10 @@ export async function sendContactEmail(_: unknown, formData: FormData): Promise<
           <div style="max-width:640px;margin:0 auto;background:#0C0C0C;border:1px solid rgba(180,184,188,0.18);border-radius:2px;overflow:hidden;">
             <div style="padding:28px 30px 22px;border-bottom:1px solid rgba(180,184,188,0.12);background:linear-gradient(135deg,#0C0C0C 0%,#111111 70%,rgba(200,18,26,0.16) 100%);">
               <div style="display:inline-block;background:#C8121A;color:#FFFFFF;padding:7px 12px;font-size:10px;font-family:'DM Mono',Consolas,monospace;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:18px;">
-                New Booking Request
+                Incoming Booking Brief
               </div>
               <h1 style="margin:0;color:#F3F3F3;font-family:'Barlow Condensed',Arial Narrow,sans-serif;font-size:34px;line-height:0.95;font-weight:900;text-transform:uppercase;letter-spacing:0;">
-                Incoming Detail<br><span style="color:#C8121A;">Lead Signal</span>
+                New Lead<br><span style="color:#C8121A;">Gloss Signal</span>
               </h1>
               <p style="margin:14px 0 0;color:#7A7A7A;font-size:12px;font-family:'DM Mono',Consolas,monospace;text-transform:uppercase;letter-spacing:0.08em;">
                 ${escapeHtml(timestamp)} IST
@@ -134,8 +134,8 @@ export async function sendContactEmail(_: unknown, formData: FormData): Promise<
   try {
     await getResend().emails.send({
       from: "onboarding@resend.dev",
-      to: ["theorign911@gmail.com"],
-      subject: `New Lead Inquiry from ${name} // ${company}`,
+      to: ["himanshuglossystreet@gmail.com"],
+      subject: `New Glossy Street lead // ${company} - ${service}`,
       replyTo: email,
       html,
     });
@@ -148,7 +148,7 @@ export async function sendContactEmail(_: unknown, formData: FormData): Promise<
     console.error("Resend API Error:", error);
     return {
       success: false,
-      message: "Transmission broke. Please try again or drop a line straight to theorign911@gmail.com",
+      message: "Transmission broke. Please try again or drop a line straight to himanshuglossystreet@gmail.com",
     };
   }
 }
