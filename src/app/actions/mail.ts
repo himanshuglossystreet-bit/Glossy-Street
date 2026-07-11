@@ -134,7 +134,7 @@ export async function sendContactEmail(_: unknown, formData: FormData): Promise<
   try {
     await getResend().emails.send({
       from: "onboarding@resend.dev",
-      to: ["himanshudhaiya1780@gmail.com"],
+      to: ["himanshudahiya1780@gmail.com"],
       subject: `New Glossy Street lead // ${company} - ${service}`,
       replyTo: email,
       html,
@@ -148,7 +148,7 @@ export async function sendContactEmail(_: unknown, formData: FormData): Promise<
     console.error("Resend API Error:", error);
     return {
       success: false,
-      message: "Transmission broke. Please try again or drop a line straight to himanshudhaiya1780@gmail.com",
+      message: "Transmission broke. Please try again or drop a line straight to himanshudahiya1780@gmail.com",
     };
   }
 }
